@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red_primary_inst"
+    tools:context=".ui.views.GoodsDetailActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_top_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_info_user"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guide_middle_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guide_top_detail"
+        app:layout_constraintBottom_toTopOf="@+id/guide_bottom_detail">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_tag_nombre"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre" />
+
+                <TextView
+                    android:id="@+id/tv_nombre_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Víctor Hugo Pólito Seba" />
+
+                <TextView
+                    android:id="@+id/tv_tag_rfc"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="RFC" />
+
+                <TextView
+                    android:id="@+id/tv_rfc_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="POSV971220HVZLBC01" />
+
+                <TextView
+                    android:id="@+id/tv_tag_address"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Domicilio" />
+
+                <TextView
+                    android:id="@+id/tv_address_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Placio Nacional, Moneda #13" />
+
+                <TextView
+                    android:id="@+id/tv_tag_floor"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Piso" />
+
+                <TextView
+                    android:id="@+id/tv_floor_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Piso 1" />
+
+                <TextView
+                    android:id="@+id/tv_tag_ext"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Extension" />
+
+                <TextView
+                    android:id="@+id/tv_ext_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6016" />
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_middle_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.github.islamkhsh.CardSliderViewPager
+        android:id="@+id/card_slider_vp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toEndOf="@+id/guide_middle_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guide_top_detail"
+        app:layout_constraintBottom_toTopOf="@+id/guide_bottom_detail"
+        app:cardSlider_indicator="@id/indicator"
+        app:cardSlider_otherPagesWidth="24dp"
+        app:cardSlider_pageMargin="12dp"
+        app:cardSlider_smallAlphaFactor="0.5"
+        app:cardSlider_smallScaleFactor="0.9"
+        />
+
+    <com.github.islamkhsh.CardSliderIndicator
+        app:layout_constraintTop_toBottomOf="@+id/guide_bottom_detail"
+        app:layout_constraintStart_toEndOf="@+id/guide_middle_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_info_goods"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guide_middle_detail"
+        app:layout_constraintTop_toTopOf="@id/guide_top_detail"
+        app:layout_constraintBottom_toTopOf="@+id/guide_bottom_detail">
+
+
+<!--
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_tag_inventario"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Número de Inventario" />
+
+                <TextView
+                    android:id="@+id/tv_inventario_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12233423342323" />
+
+                <TextView
+                    android:id="@+id/tv_tag_serie"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Serie" />
+
+                <TextView
+                    android:id="@+id/tv_serie_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1223345132412341" />
+
+                <TextView
+                    android:id="@+id/tv_tag_marca"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Marca" />
+
+                <TextView
+                    android:id="@+id/tv_marca_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lenovo" />
+
+                <TextView
+                    android:id="@+id/tv_tag_model"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Modelo" />
+
+                <TextView
+                    android:id="@+id/tv_model_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lattitude 1234" />
+
+                <TextView
+                    android:id="@+id/tv_tag_mac_address"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="MAC Address" />
+
+                <TextView
+                    android:id="@+id/tv_mac_address_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12:34:f5:5f:4r" />
+
+                <TextView
+                    android:id="@+id/tv_tag_description"
+                    style="@style/TextSubtitleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Descripción" />
+
+                <TextView
+                    android:id="@+id/tv_description_detail"
+                    style="@style/TextBodyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+
+            </LinearLayout>
+        </ScrollView>
+-->
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_bottom_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">QReaderApp</string>
+    <string name="str_escanear">Escanear</string>
+    <string name="str_tag_nombre">Nombre</string>
+    <string name="str_tag_rfc">RFC</string>
+    <string name="str_tag_domicilio">Domicilio</string>
+    <string name="str_tag_piso">Piso</string>
+    <string name="str_tag_puesto">Puesto</string>
+    <string name="str_tag_num_de_inventario">Número de Inventario</string>
+    <string name="str_tag_serie">Serie</string>
+    <string name="str_tag_marca">Marca</string>
+    <string name="str_tag_modelo">Modelo</string>
+    <string name="str_tag_mac_address">MAC Address</string>
+    <string name="str_tag_descripcion">Descripción</string>
+    <string name="str_capturar">Capturar</string>
+    <string name="str_captura">Captura</string>
+    <string name="str_capture_caption">Captura los datos de un nuevo bien oprimiendo en \'Capturar\'</string>
+    <string name="str_caption_scanner">Escanea los códigos QR oprimiendo en \'Escanear\'</string>
+    <string name="str_escaner">Escaner</string>
+    <string name="str_guardar">Guardar</string>
+    <string name="str_foto_del_bien">Foto del bien</string>
+</resources>

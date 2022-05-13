@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_tag_num_inv"
+            style="@style/TextSubtitleCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número de inventario: " />
+
+        <TextView
+            android:id="@+id/tv_num_inv"
+            style="@style/TextBodyCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/tv_tag_num_inv"
+            android:text="2212312412424215" />
+
+        <ImageView
+            android:id="@+id/img_bien"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/banner_qr"
+            android:layout_below="@+id/tv_tag_num_inv"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:id="@+id/linear_serie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_bien"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextSubtitleCard"
+                android:id="@+id/tv_tag_serie_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Serie: " />
+            <TextView
+                style="@style/TextBodyCard"
+                android:layout_marginStart="8dp"
+                android:id="@+id/tv_serie_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1211234234141234" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/linear_marca_modelo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_serie"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_tag_marca_item"
+                style="@style/TextSubtitleCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marca: " />
+
+            <TextView
+                android:id="@+id/tv_marca_item"
+                style="@style/TextBodyCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Lenovo" />
+
+            <TextView
+                android:id="@+id/tv_tag_modelo_item"
+                style="@style/TextSubtitleCard"
+                android:layout_marginStart="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modelo: " />
+
+            <TextView
+                android:id="@+id/tv_modelo_item"
+                style="@style/TextBodyCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Lenovo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_mac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_marca_modelo"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextSubtitleCard"
+                android:id="@+id/tv_tag_macaddr_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAC Address: " />
+            <TextView
+                style="@style/TextBodyCard"
+                android:layout_marginStart="8dp"
+                android:id="@+id/tv_macaddr_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:f1:a4:bd:3f:1b" />
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
