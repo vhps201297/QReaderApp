@@ -19,4 +19,9 @@
     <string name="str_escaner">Escaner</string>
     <string name="str_guardar">Guardar</string>
     <string name="str_foto_del_bien">Foto del bien</string>
+    <string name="str_rfc_hardcode">OAPE8809082E6</string>
+    <string name="str_name_hardcode">Enrique Damián Ordaz Pérez</string>
+    <string name="str_address_hardcode">PALACIO NACIONAL</string>
+    <string name="str_piso_hardcode">1ER. PISO</string>
+    <string name="str_puesto_hardcode">Jefatura de departamento</string>
 </resources>

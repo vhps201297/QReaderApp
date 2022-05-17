@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red_primary_inst"
+    android:background="@drawable/bg_alas_horizontal"
     tools:context=".ui.views.GoodsDetailActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -47,7 +47,7 @@
                     style="@style/TextBodyCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Víctor Hugo Pólito Seba" />
+                    android:text="@string/str_name_hardcode" />
 
                 <TextView
                     android:id="@+id/tv_tag_rfc"
@@ -62,7 +62,7 @@
                     style="@style/TextBodyCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="POSV971220HVZLBC01" />
+                    android:text="@string/str_rfc_hardcode" />
 
                 <TextView
                     android:id="@+id/tv_tag_address"
@@ -77,7 +77,7 @@
                     style="@style/TextBodyCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Placio Nacional, Moneda #13" />
+                    android:text="@string/str_address_hardcode" />
 
                 <TextView
                     android:id="@+id/tv_tag_floor"
@@ -92,22 +92,22 @@
                     style="@style/TextBodyCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Piso 1" />
+                    android:text="@string/str_piso_hardcode" />
 
                 <TextView
-                    android:id="@+id/tv_tag_ext"
+                    android:id="@+id/tv_tag_puesto"
                     style="@style/TextSubtitleCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Extension" />
+                    android:text="Puesto" />
 
                 <TextView
-                    android:id="@+id/tv_ext_detail"
+                    android:id="@+id/tv_puesto_detail"
                     style="@style/TextBodyCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="6016" />
+                    android:text="@string/str_puesto_hardcode" />
             </LinearLayout>
         </ScrollView>
 
@@ -156,111 +156,6 @@
         app:layout_constraintStart_toEndOf="@+id/guide_middle_detail"
         app:layout_constraintTop_toTopOf="@id/guide_top_detail"
         app:layout_constraintBottom_toTopOf="@+id/guide_bottom_detail">
-
-
-<!--
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/tv_tag_inventario"
-                    style="@style/TextSubtitleCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Número de Inventario" />
-
-                <TextView
-                    android:id="@+id/tv_inventario_detail"
-                    style="@style/TextBodyCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="12233423342323" />
-
-                <TextView
-                    android:id="@+id/tv_tag_serie"
-                    style="@style/TextSubtitleCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Serie" />
-
-                <TextView
-                    android:id="@+id/tv_serie_detail"
-                    style="@style/TextBodyCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="1223345132412341" />
-
-                <TextView
-                    android:id="@+id/tv_tag_marca"
-                    style="@style/TextSubtitleCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Marca" />
-
-                <TextView
-                    android:id="@+id/tv_marca_detail"
-                    style="@style/TextBodyCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Lenovo" />
-
-                <TextView
-                    android:id="@+id/tv_tag_model"
-                    style="@style/TextSubtitleCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Modelo" />
-
-                <TextView
-                    android:id="@+id/tv_model_detail"
-                    style="@style/TextBodyCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Lattitude 1234" />
-
-                <TextView
-                    android:id="@+id/tv_tag_mac_address"
-                    style="@style/TextSubtitleCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="MAC Address" />
-
-                <TextView
-                    android:id="@+id/tv_mac_address_detail"
-                    style="@style/TextBodyCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="12:34:f5:5f:4r" />
-
-                <TextView
-                    android:id="@+id/tv_tag_description"
-                    style="@style/TextSubtitleCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Descripción" />
-
-                <TextView
-                    android:id="@+id/tv_description_detail"
-                    style="@style/TextBodyCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="vertical"
-                    android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
-
-            </LinearLayout>
-        </ScrollView>
--->
 
     </androidx.cardview.widget.CardView>
 

@@ -44,7 +44,7 @@
                         style="@style/TextBodyCard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Víctor Hugo Pólito Seba" />
+                        android:text="@string/str_name_hardcode" />
 
                     <TextView
                         android:id="@+id/tv_tag_rfc"
@@ -59,7 +59,7 @@
                         style="@style/TextBodyCard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="POSV971220HVZLBC01" />
+                        android:text="@string/str_rfc_hardcode" />
 
                     <TextView
                         android:id="@+id/tv_tag_address"
@@ -74,7 +74,7 @@
                         style="@style/TextBodyCard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Placio Nacional, Moneda #13" />
+                        android:text="@string/str_address_hardcode" />
 
                     <TextView
                         android:id="@+id/tv_tag_floor"
@@ -89,7 +89,7 @@
                         style="@style/TextBodyCard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Piso 1" />
+                        android:text="@string/str_piso_hardcode" />
 
                     <TextView
                         android:id="@+id/tv_tag_puesto"
@@ -104,118 +104,10 @@
                         style="@style/TextBodyCard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Jefatura de departamento" />
+                        android:text="@string/str_puesto_hardcode" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-            <!--
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_info_goods"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                app:cardCornerRadius="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="@id/guide_middle_detail">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/tv_tag_inventario"
-                        style="@style/TextSubtitleCard"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/str_tag_num_de_inventario" />
-
-                    <TextView
-                        android:id="@+id/tv_inventario_detail"
-                        style="@style/TextBodyCard"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="12233423342323" />
-
-                    <TextView
-                        android:layout_marginTop="16dp"
-                        android:id="@+id/tv_tag_serie"
-                        android:layout_width="match_parent"
-                        style="@style/TextSubtitleCard"
-                        android:layout_height="wrap_content"
-                        android:text="@string/str_tag_serie" />
-                    <TextView
-                        style="@style/TextBodyCard"
-                        android:id="@+id/tv_serie_detail"
-                        android:layout_width="match_parent"
-                        android:text="1223345132412341"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        style="@style/TextSubtitleCard"
-                        android:id="@+id/tv_tag_marca"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/str_tag_marca" />
-
-                    <TextView
-                        android:id="@+id/tv_marca_detail"
-                        style="@style/TextBodyCard"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Lenovo" />
-
-                    <TextView
-                        android:layout_marginTop="16dp"
-                        android:id="@+id/tv_tag_model"
-                        android:layout_width="match_parent"
-                        style="@style/TextSubtitleCard"
-                        android:layout_height="wrap_content"
-                        android:text="@string/str_tag_modelo" />
-                    <TextView
-                        style="@style/TextBodyCard"
-                        android:id="@+id/tv_model_detail"
-                        android:layout_width="match_parent"
-                        android:text="Lattitude 1234"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:layout_marginTop="16dp"
-                        android:id="@+id/tv_tag_mac_address"
-                        android:layout_width="match_parent"
-                        style="@style/TextSubtitleCard"
-                        android:layout_height="wrap_content"
-                        android:text="@string/str_tag_mac_address" />
-
-                    <TextView
-                        android:id="@+id/tv_mac_address_detail"
-                        style="@style/TextBodyCard"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="12:34:f5:5f:4r" />
-
-                    <TextView
-                        android:layout_marginTop="16dp"
-                        android:id="@+id/tv_tag_description"
-                        android:layout_width="match_parent"
-                        style="@style/TextSubtitleCard"
-                        android:layout_height="wrap_content"
-                        android:text="@string/str_tag_descripcion" />
-
-                    <TextView
-                        android:lines="5"
-                        android:id="@+id/tv_description_detail"
-                        style="@style/TextBodyCard"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Descripción del bien " />
-
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
--->
         </LinearLayout>
     </ScrollView>
 

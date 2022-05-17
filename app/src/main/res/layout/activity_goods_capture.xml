@@ -7,112 +7,214 @@
     android:background="@drawable/bg_alas"
     tools:context=".ui.views.GoodsCaptureActivity">
 
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guide_top_capture"
+        android:layout_width="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/red_primary_inst"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Resguardante"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:id="@+id/spinner_til_user"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:hint="Usuario resguardante"
+                    android:id="@+id/autocomplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_top_capture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.28" />
 
     <androidx.cardview.widget.CardView
-        app:layout_constraintTop_toTopOf="@id/guide_top_capture"
-        app:layout_constraintBottom_toTopOf="@+id/guide_bottom_capture"
         android:layout_width="match_parent"
-        android:layout_marginTop="-35dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="-20dp"
         app:cardCornerRadius="25dp"
         app:cardElevation="8dp"
-        android:layout_height="0dp">
+        app:layout_constraintBottom_toTopOf="@+id/guide_bottom_capture"
+        app:layout_constraintTop_toTopOf="@id/guide_top_capture">
+
         <ScrollView
-            android:paddingBottom="40dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="40dp">
 
             <LinearLayout
-                android:padding="8dp"
-                android:layout_marginTop="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="50dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_serie_captura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+                    android:layout_margin="16dp">
 
                     <EditText
-                        android:background="@android:color/transparent"
+                        android:id="@+id/edtxt_serie_captura"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
                         android:hint="@string/str_tag_serie" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_marca_captura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+                    android:layout_margin="16dp">
 
                     <EditText
-                        android:background="@android:color/transparent"
+                        android:focusable="false"
+                        android:onClick="onClickMarca"
+                        android:id="@+id/edtxt_marca_captura"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
                         android:hint="@string/str_tag_marca" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_modelo_captura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+                    android:layout_margin="16dp">
 
                     <EditText
-                        android:background="@android:color/transparent"
+                        android:focusable="false"
+                        android:onClick="onClickModelo"
+                        android:id="@+id/edtxt_modelo_captura"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
                         android:hint="@string/str_tag_modelo" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_mac_captura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+                    android:layout_margin="16dp">
 
-                    <EditText
-                        android:background="@android:color/transparent"
+                    <com.santalu.maskara.widget.MaskEditText
+                        android:id="@+id/edtxt_mac_captura"
                         android:layout_width="match_parent"
+                        app:mask="__:__:__:__:__:__"
+                        app:maskCharacter="_"
+                        app:maskStyle="completable"
+                        android:inputType="number"
                         android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
                         android:hint="@string/str_tag_mac_address" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_descripcion_captura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+                    android:layout_margin="16dp">
 
                     <EditText
-                        android:background="@android:color/transparent"
+                        android:id="@+id/edtxt_descripcion_captura"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
                         android:hint="@string/str_tag_descripcion" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_foto_captura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="32dp"
+                    android:layout_margin="16dp"
 
                     >
+
                     <EditText
-                        android:background="@android:color/transparent"
-                        android:drawableEnd="@drawable/ic_red_camera"
+                        android:id="@+id/edtxt_foto_captura"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="@string/str_foto_del_bien" />
+                        android:background="@android:color/transparent"
+                        android:drawableEnd="@drawable/ic_red_camera"
+                        android:focusable="false"
+                        android:hint="@string/str_foto_del_bien"
+                        android:onClick="onClickCapturePicture" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/slider_photo_capture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    />
+                <!--
+                <com.github.islamkhsh.CardSliderViewPager
+                    android:id="@+id/slider_photo_capture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:cardSlider_indicator="@id/indicator_capture"
+                    app:cardSlider_otherPagesWidth="24dp"
+                    app:cardSlider_pageMargin="24dp"
+                    app:cardSlider_smallAlphaFactor="0.5"
+                    app:cardSlider_smallScaleFactor="0.8" />
 
+                <com.github.islamkhsh.CardSliderIndicator
+                    android:id="@+id/indicator_capture"
+                    android:layout_width="wrap_content"
+                    app:selectedIndicator="@drawable/selected_dot_indicator"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" />
+-->
+                <Button
+                    android:id="@+id/btn_guardar_captura"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/str_guardar"
+                    app:layout_constraintBottom_toBottomOf="parent" />
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>
@@ -123,14 +225,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="1.0" />
-
-
-    <Button
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="16dp"
-        android:text="@string/str_guardar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
