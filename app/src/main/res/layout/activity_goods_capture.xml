@@ -7,46 +7,52 @@
     android:background="@drawable/bg_alas"
     tools:context=".ui.views.GoodsCaptureActivity">
 
+
     <androidx.cardview.widget.CardView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/guide_top_capture"
+        android:id="@+id/card_list_user"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_height="wrap_content">
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guide_top_capture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Resguardante"
                 android:textColor="@color/red_primary_inst"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="Resguardante"/>
+                android:textSize="20dp" />
+
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:id="@+id/spinner_til_user"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp">
 
                 <AutoCompleteTextView
-                    android:hint="Usuario resguardante"
                     android:id="@+id/autocomplete"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:hint="Usuario resguardante"
+                    android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -63,6 +69,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="-20dp"
         app:cardCornerRadius="25dp"
         app:cardElevation="8dp"
@@ -83,6 +90,17 @@
                 android:paddingEnd="8dp"
                 android:paddingBottom="50dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Información del bien"
+                    android:textColor="@color/red_primary_inst"
+                    android:textSize="20dp" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_serie_captura"
                     android:layout_width="match_parent"
@@ -93,6 +111,7 @@
                         android:id="@+id/edtxt_serie_captura"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:inputType="numberSigned"
                         android:background="@android:color/transparent"
                         android:hint="@string/str_tag_serie" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -108,24 +127,24 @@
                         android:onClick="onClickMarca"
                         android:id="@+id/edtxt_marca_captura"
                         android:layout_width="match_parent"
+                        android:inputType="none"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
                         android:hint="@string/str_tag_marca" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_modelo_captura"
+                    android:id="@+id/spinner_modelo_captura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_margin="16dp">
 
-                    <EditText
-                        android:focusable="false"
-                        android:onClick="onClickModelo"
+                    <AutoCompleteTextView
+                        android:inputType="text"
                         android:id="@+id/edtxt_modelo_captura"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
                         android:hint="@string/str_tag_modelo" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -141,7 +160,7 @@
                         app:mask="__:__:__:__:__:__"
                         app:maskCharacter="_"
                         app:maskStyle="completable"
-                        android:inputType="number"
+                        android:inputType="textWebEditText"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
                         android:hint="@string/str_tag_mac_address" />
@@ -158,7 +177,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@android:color/transparent"
-                        android:hint="@string/str_tag_descripcion" />
+                        android:hint="@string/str_tag_descripcion"
+                        android:inputType="textCapWords" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout

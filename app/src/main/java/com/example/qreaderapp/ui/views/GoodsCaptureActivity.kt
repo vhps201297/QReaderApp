@@ -16,6 +16,7 @@ import com.example.qreaderapp.data.model.Util
 import com.example.qreaderapp.databinding.ActivityGoodsCaptureBinding
 import com.example.qreaderapp.ui.adapters.ItemCardListener
 import com.example.qreaderapp.ui.adapters.PhotoAdapter
+import com.example.qreaderapp.ui.dialog.PhotoDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class GoodsCaptureActivity : AppCompatActivity(), ItemCardListener {
@@ -33,10 +34,16 @@ class GoodsCaptureActivity : AppCompatActivity(), ItemCardListener {
         binding.sliderPhotoCapture.adapter = adapterPhoto
         title = "Captura de datos"
 
-        val items = listOf("Víctor Hugo Pólito Seba", "Daniel Ramos Limón", "Jonatan Michael López Colín")
+        val items = listOf("Víctor Hugo Pólito Seba", "Daniel Ramos Limón", "Jonatan Michael López Colín","Enrique Damián Ordaz Pérez")
         val arrayAdapter = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item)
         arrayAdapter.addAll(items)
         (binding.spinnerTilUser.editText as AutoCompleteTextView).setAdapter(arrayAdapter)
+
+        val itemsModelos = listOf("ProDesk 400 G5 SFF", "KBAR211", "674316","LN8A6NH11B","KBAR211","PS8402A","674316")
+        val arrayAdapterModelo = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item)
+        arrayAdapterModelo.addAll(itemsModelos)
+        binding.edtxtModeloCaptura.setAdapter(arrayAdapterModelo)
+
     }
 
     fun onClickCapturePicture(view: View) {
@@ -63,35 +70,29 @@ class GoodsCaptureActivity : AppCompatActivity(), ItemCardListener {
         adapterPhoto.notifyDataSetChanged()
     }
 
+    override fun clickPhoto(photo: Photo) {
+        PhotoDialog(photo).show(supportFragmentManager,TAG)
+    }
+
     fun onClickMarca(view: View) {
         Log.e(TAG, "click marca")
         val marcas = arrayOf("LENOVO", "HP", "DELL")
         MaterialAlertDialogBuilder(this)
             .setTitle("MARCAS")
             .setPositiveButton("Aceptar") { dialog, which ->
-                Log.e(TAG, "positive button which: $which")
+                Log.v(TAG, "positive button which: $which")
             }
             .setSingleChoiceItems(marcas,1){ dialog, which ->
-                Log.e(TAG, "single choice: $which")
+                Log.v(TAG, "single choice: $which")
                 binding.edtxtMarcaCaptura.setText(marcas[which])
             }
             .show()
     }
 
-    fun onClickModelo(view: View) {
 
-        Log.e(TAG, "click marca")
-        val marcas = arrayOf("ProDesk 400 G5 SFF", "KBAR211", "674316", "LN8A6NH11B", "KBAR211", "PS8402A")
-        MaterialAlertDialogBuilder(this)
-            .setTitle("MODELOS")
-            .setPositiveButton("Aceptar") { dialog, which ->
-                Log.e(TAG, "positive button which: $which")
-            }
-            .setSingleChoiceItems(marcas,1){ dialog, which ->
-                Log.e(TAG, "single choice: $which")
-                binding.edtxtModeloCaptura.setText(marcas[which])
-            }
-            .show()
+    override fun onBackPressed() {
+        listPhotos.clear()
+        super.onBackPressed()
     }
 
 }

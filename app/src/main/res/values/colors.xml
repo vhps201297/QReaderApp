@@ -10,6 +10,6 @@
 
     <color name="red_primary_inst">#691C32</color>
     <color name="red_secundary_inst">#9F2241</color>
-    <color name="aurum_terceary">#B38E5D</color>
-    <color name="aurum_terceary_accent">#D4C19C</color>
+    <color name="aurum_tertiary">#B38E5D</color>
+    <color name="aurum_tertiary_accent">#D4C19C</color>
 </resources>

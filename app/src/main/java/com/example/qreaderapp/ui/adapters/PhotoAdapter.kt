@@ -27,6 +27,7 @@ class PhotoAdapter(var listPhotos: List<Photo>, val listener: ItemCardListener):
 
         fun bindData(photo: Photo, listener: ItemCardListener){
             binding.imgPhoto.setImageBitmap(photo.photoBitmap)
+            binding.imgPhoto.setOnClickListener {listener.clickPhoto(photo = photo)}
             binding.fabDeletePhoto.setOnClickListener { listener.removePhoto(photo = photo) }
         }
     }
@@ -39,4 +40,5 @@ class PhotoAdapter(var listPhotos: List<Photo>, val listener: ItemCardListener):
 
 interface ItemCardListener{
     fun removePhoto(photo: Photo)
+    fun clickPhoto(photo: Photo)
 }
